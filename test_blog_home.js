@@ -1,7 +1,9 @@
 const pw = require('playwright');
 
 (async () => {
-  const browser = await pw.webkit.launch(); // or 'chromium', 'firefox'
+  const browser = await pw.chromium.launch({
+    headless: false
+  }); // or 'chromium', 'firefox'
   const context = await browser.newContext();
   const page = await context.newPage();
 
